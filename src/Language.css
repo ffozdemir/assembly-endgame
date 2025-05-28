@@ -1,4 +1,29 @@
-.language{
-   padding: 4.5px;
-   border-radius: 3px;
+/* ===========================================
+   PROGRAMLAMA DİLİ CHIP STİLLERİ
+   =========================================== */
+
+/* Her bir programlama dili chip'i için temel stil */
+.chip {
+  padding: 4.5px;
+  border-radius: 3px;
+  position: relative; /* Overlay için gerekli */
+}
+
+/* ===========================================
+   KAYBOLAN DİL OVERLAY EFEKTİ
+   =========================================== */
+
+/* Kaybolan (yanlış tahminle elenen) diller için ölüm overlay'i */
+div.chip.lost::before {
+  content: "💀"; /* Ölüm emojisi */
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-size: 0.85rem;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Yarı şeffaf siyah overlay */
 }

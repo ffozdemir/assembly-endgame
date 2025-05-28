@@ -1,19 +1,42 @@
+/* ===========================================
+   GENEL LAYOUT VE ANA CONTAINER
+   =========================================== */
+
+/* Ana container - tüm içeriği ortalar */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===========================================
+   BAŞLIK VE AÇIKLAMA STİLLERİ
+   =========================================== */
+
+/* Başlık bölümü */
 header {
   text-align: center;
 }
 
+/* Ana başlık */
 header > h1 {
   font-size: 1.25rem;
   font-weight: 500;
   color: #f9f4da;
 }
 
+/* Açıklama metni */
 header > p {
   font-size: 0.875rem;
   max-width: 350px;
   color: #8e8e8e;
 }
 
+/* ===========================================
+   OYUN DURUMU MESAJ BÖLÜMÜ
+   =========================================== */
+
+/* Oyun durumu mesajları için container */
 section.game-status {
   background-color: #10a95b;
   display: flex;
@@ -24,24 +47,37 @@ section.game-status {
   margin-block: 30px;
 }
 
+/* Durum mesajı paragrafları */
 section.game-status > p {
   margin: 5px;
 }
+
+/* Durum başlıkları */
 section.game-status > h2 {
   font-size: 1.25rem;
   margin: 5px;
 }
 
+/* ===========================================
+   PROGRAMLAMA DİLLERİ CHIP'LERİ
+   =========================================== */
+
+/* Dil chip'lerinin container'ı */
 section.language-chips {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin: 0 auto;
   flex-wrap: wrap;
   max-width: 350px;
   gap: 5px;
 }
 
+/* ===========================================
+   KELİME HARFLER BÖLÜMÜ
+   =========================================== */
+
+/* Kelime harfleri container */
 section.word {
   display: flex;
   align-items: center;
@@ -50,6 +86,7 @@ section.word {
   margin-top: 40px;
 }
 
+/* Her bir harf kutusu */
 section.word > span {
   height: 40px;
   width: 40px;
@@ -61,6 +98,11 @@ section.word > span {
   border-bottom: 1px solid #f9f4da;
 }
 
+/* ===========================================
+   KLAVYE STİLLERİ
+   =========================================== */
+
+/* Klavye container */
 section.keyboard {
   display: flex;
   flex-wrap: wrap;
@@ -71,6 +113,7 @@ section.keyboard {
   margin-bottom: 36px;
 }
 
+/* Klavye butonları */
 section.keyboard > button {
   height: 35px;
   width: 35px;
@@ -80,6 +123,11 @@ section.keyboard > button {
   cursor: pointer;
 }
 
+/* ===========================================
+   BUTON STİLLERİ
+   =========================================== */
+
+/* Yeni oyun butonu */
 button.new-game {
   background-color: #11b5e5;
   border: 1px solid #d7d7d7;
@@ -92,10 +140,68 @@ button.new-game {
   cursor: pointer;
 }
 
+/* ===========================================
+   DURUM-BASED STİLLER
+   =========================================== */
+
+/* Doğru tahmin edilen harfler */
 section.keyboard > button.correct {
   background-color: #10a95b;
 }
 
+/* Yanlış tahmin edilen harfler */
 section.keyboard > button.wrong {
   background-color: #ec5d49;
+}
+
+/* Oyun kazanıldığında durum mesajı */
+section.game-status.won {
+  background-color: #10a95b;
+}
+
+/* Oyun kaybedildiğinde durum mesajı */
+section.game-status.lost {
+  background-color: #ba2a2a;
+}
+
+/* Veda mesajı gösterildiğinde durum */
+section.game-status.farewell {
+  background-color: #7a5ea7;
+  border: 1px dashed #323232;
+}
+
+/* Veda mesajı paragrafı */
+section.game-status > p.farewell-message {
+  background-color: #7a5ea7;
+  border: 1px dashed #323232;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* ===========================================
+   ERİŞİLEBİLİRLİK VE YARDIMCI STİLLER
+   =========================================== */
+
+/* Devre dışı klavye butonları */
+section.keyboard > button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Ekran okuyucular için gizli içerik */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Kaçırılan harfler (oyun kaybedildiğinde) */
+section.word > span.missed-letter {
+  color: #ec5d49;
 }
